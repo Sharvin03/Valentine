@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <style>
+    body {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://raw.githubusercontent.com/Sharvin03/Valentine/main/My Angel(1).png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background-image 0.5s ease;
+    }
+
+    #message {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      margin: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #yesBtn {
+      color: #fff;
+    }
+
+    #noBtn {
+      color: #fff;
+    }
+
+    #noBtn:hover {
+      transform: translate(0, 5px);
+    }
+
+    #stickerContainer {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Will you be my Valentine Babyy?</div>
+  <button id="yesBtn" onclick="showResponse('Yes')">Yes</button>
+  <button id="noBtn" onmouseover="moveNoButton()" onmouseout="resetNoButton()" onclick="showResponse('No')">No</button>
+  <div id="stickerContainer"></div>
+
+  <script>
+    function showResponse(response) {
+      var messageDiv = document.getElementById("message");
+      var yesBtn = document.getElementById("yesBtn");
+      var noBtn = document.getElementById("noBtn");
+      var stickerContainer = document.getElementById("stickerContainer");
+
+      if (response === "Yes") {
+        messageDiv.innerHTML = "Yayy! I Love you My World!😍❤️";
+        document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/Sharvin03/Valentine/main/Yayyy.png')";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+
+        // Display the GIF with transparent background using iframe
+        stickerContainer.innerHTML = '<iframe src="https://i.gifer.com/ZEAA.gif" frameborder="0" scrolling="auto" allowfullscreen width="100%" height="300"></iframe>';
+        stickerContainer.style.display = "block";
+      } else {
+        messageDiv.innerHTML = "Cannottt like thatt, must be my Valentine nyyy.😂❤️";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+	stickerContainer.innerHTML = '<iframe src="https://i.gifer.com/QcfT.gif" frameborder="0" scrolling="auto" allowfullscreen width="100%" height="300"></iframe>';
+        stickerContainer.style.display = "block";
+      }
+    }
+
+    function moveNoButton() {
+      var noBtn = document.getElementById("noBtn");
+      noBtn.style.transform = "translate(0, 5px)";
+    }
+
+    function resetNoButton() {
+      var noBtn = document.getElementById("noBtn");
+      noBtn.style.transform = "translate(0, 0)";
+    }
+  </script>
+</body>
+</html>
