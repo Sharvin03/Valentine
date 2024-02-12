@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0; /* Reset default margin */
+      padding: 0; /* Reset default padding */
+      background-image: url('C:\Users\User\OneDrive\Desktop\New folder\BG.jpg'); /* Update the path to your image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Set the height to 100% of the viewport height */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #message {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #fff; /* Set the text color to white */
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #ff4d4d;
+      color: #fff;
+      border: none;
+    }
+
+    #noBtn {
+      background-color: #4d94ff;
+      color: #fff;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Will you be my Valentine?</div>
+  <button id="yesBtn" onclick="showResponse('Yes')">Yes</button>
+  <button id="noBtn" onclick="showResponse('No')">No</button>
+
+  <script>
+    function showResponse(response) {
+      var messageDiv = document.getElementById("message");
+      var yesBtn = document.getElementById("yesBtn");
+      var noBtn = document.getElementById("noBtn");
+
+      if (response === "Yes") {
+        messageDiv.innerHTML = "Yay! You said Yes! 😍❤️";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      } else {
+        messageDiv.innerHTML = "Oh no! Maybe next time. 😔💔";
+        yesBtn.style.display = "none";
+        noBtn.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
